@@ -1,0 +1,68 @@
+<html>
+  <head>
+  <title>Shadows Over Camelot</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="camelot.css" title="default">
+  <meta http-equiv="Default-Style" content="default">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+<div id="select-game">
+<h1>Select a Game Element</h1>
+<button id="excalibur">Excalibur</button>
+<button id="siege">Siege Engines</button>
+<button id="round-table">Round Table</button>
+</div>
+
+<div id="take-picture">
+  <div id = "take-photo-button">
+  <button id="capture" class="pic">Take a photo</button></div>
+  <div id="download-photo-button">
+  <a href="#" class="button" id="btn-download" download="camelot-image.png">Download</a></div>
+  <div id = "upload-photo-button"><form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+  </form></div>
+
+<video id="player" autoplay width=320 height=240></video>
+
+<canvas id="canvas" width=320 height=240></canvas>
+<script>
+const player = document.getElementById('player');
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+const captureButton = document.getElementById('capture');
+var data = canvas.toDataURL('image/png');
+
+const constraints = {
+  video: true,
+};
+
+captureButton.addEventListener('click', () => {
+  context.drawImage(player, 0, 0, canvas.width, canvas.height);
+
+  // Stop all video streams.
+  player.srcObject.getVideoTracks().forEach(track => track.stop());
+});
+
+navigator.mediaDevices.getUserMedia(constraints)
+  .then((stream) => {
+    // Attach the video stream to the video element and autoplay.
+    player.srcObject = stream;
+  });
+
+
+</script>
+
+</div>
+
+
+
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="camelot.js"></script>
+  </body>
+  </html>
