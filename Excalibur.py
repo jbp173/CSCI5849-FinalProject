@@ -37,6 +37,8 @@ if total == 0:
     output = "All markers found, Excalibur is not placed correctly."
 elif total == 9:
     output = "No markers found, please retake picture."
+elif total >= 4:
+    output = "Please retake picture, photo is not centered."
 elif total == 1:
     output = "Excalibur is in position " + output
 else:
