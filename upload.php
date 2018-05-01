@@ -28,7 +28,7 @@ if ($uploadOk == 0) {
     }
 }
 
-sleep(10);
+sleep(3);
 
 ?>
 
