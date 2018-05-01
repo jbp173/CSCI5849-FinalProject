@@ -29,7 +29,9 @@ while (True):
     output = ""    
     total = 0
 
-    if len(ids) != 0:
+    if ids is None:
+        total = 9
+    else:
         for i in range(1,9):
             if [i] not in ids:
                 output += str(i-5) + ", " #-5 is used because ids start at 1, but our Excalibur positions start at -4
@@ -42,7 +44,7 @@ while (True):
     elif total >= 4:
         output = "Please retake picture, photo is not centered."
     elif total == 1:
-        output = "Excalibur is in position " + output
+        output = "Excalibur is in position " + output[:len(output)-1]
     else:
         if output[len(output)-4] == "-":
             output = "Excalibur is one of positions " + output[:len(output)-4] + "or " + output[len(output)-4:len(output)-2]
