@@ -29,7 +29,7 @@ while (True):
     output = ""    
     total = 0
 
-    if len(ids) != 0
+    if len(ids) != 0:
         for i in range(1,9):
             if [i] not in ids:
                 output += str(i-5) + ", " #-5 is used because ids start at 1, but our Excalibur positions start at -4
