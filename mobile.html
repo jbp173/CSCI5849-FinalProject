@@ -36,6 +36,12 @@
 
   Using PHP to redirect to a new page:
   https://stackoverflow.com/questions/9541238/how-to-go-to-new-html-page-from-php-script
+
+  Restyling the "Take Photo" input:
+  https://stackoverflow.com/questions/1944267/how-to-change-the-button-text-of-input-type-file/36248168#36248168
+
+  Styling the form:
+  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Styling_HTML_forms
 -->
 
 
@@ -49,8 +55,9 @@
 
 <div id="take-picture">
 <form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
+    <p>1. Select "Take Photo"<br>2. Take a photo<br>3. Select "Upload Image"<p>
+    <input type="button" id="loadFileXml" value="Take Photo" onclick="document.getElementById('fileToUpload').click();" />
+    <input type="file" style="display:none;" name="fileToUpload" id="fileToUpload" >
     <input type="submit" value="Upload Image" name="submit">
   </form>
 
