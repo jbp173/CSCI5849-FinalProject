@@ -72,3 +72,7 @@ button.addEventListener('click', function (e) {
     $("#upload-photo-button").show();
 
 });
+
+$('#fileToUpload').inputFileText({
+    text: 'Select File'
+});
