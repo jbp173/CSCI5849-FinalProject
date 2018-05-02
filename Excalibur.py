@@ -44,7 +44,7 @@ while (True):
     elif total >= 4:
         output = "Please retake picture, photo is not centered."
     elif total == 1:
-        output = "Excalibur is in position " + output[:len(output)-1]
+        output = "Excalibur is in position " + output[:len(output)-2]
     else:
         if output[len(output)-4] == "-":
             output = "Excalibur is one of positions " + output[:len(output)-4] + "or " + output[len(output)-4:len(output)-2]
